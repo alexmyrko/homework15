@@ -5,6 +5,7 @@ import cursor.library.entities.User;
 import cursor.library.util.HibernateUtil;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 public class UserDAO {
@@ -39,13 +40,18 @@ public class UserDAO {
     }
 
     public List<User> getAllUsers(){
-        EntityManager entityManager = HibernateUtil.getEntityManager();
-        List<User> users = entityManager.createQuery("From User").getResultList();
+        List<User> users = HibernateUtil.getEntityManager().createQuery("From User").getResultList();
         return users;
     }
 
     public List<Book> getBooksByUserId(int id){
         User user = getUserByID(id);
         return user.getBooks();
+    }
+
+    public List<Book> getBooksByUserIdUsingQuery(int id){
+        Query query = HibernateUtil.getEntityManager().createNamedQuery("Book.findBooksByUser");
+        query.setParameter("id", id);
+        return query.getResultList();
     }
 }

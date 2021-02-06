@@ -6,6 +6,7 @@ import java.util.List;
 
 
 @Entity
+@NamedQuery(name = "Book.findBooksByUser", query = "select b from Book b where b.user.id = :id")
 @Table(name = "books")
 public class Book {
     @Id

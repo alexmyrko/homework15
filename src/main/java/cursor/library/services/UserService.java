@@ -32,4 +32,8 @@ public class UserService {
     public List<Book> getBooksByUserId(int id){
         return userDAO.getBooksByUserId(id);
     }
+
+    public List<Book> getBooksByUserIdUsingQuery(int id) {
+        return userDAO.getBooksByUserIdUsingQuery(id);
+    }
 }

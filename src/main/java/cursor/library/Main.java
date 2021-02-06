@@ -6,6 +6,11 @@ import cursor.library.entities.User;
 import cursor.library.services.AuthorService;
 import cursor.library.services.BookService;
 import cursor.library.services.UserService;
+import cursor.library.util.HibernateUtil;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.util.List;
 
 
 public class Main {
@@ -58,8 +63,16 @@ public class Main {
 
         System.out.println("Book by id = 1:");
         System.out.println(bookService.getBookById(1) + "\n");
+
         int userId = 2;
         System.out.println(String.format("Books of user with id = %d: \nuser: %s\nbooks: %s",
-                userId, userService.getUserById(2).getName(), userService.getBooksByUserId(2)));
+                userId, userService.getUserById(userId).getName(), userService.getBooksByUserId(userId)));
+        System.out.println("------------------------");
+
+        // Get books by userId using named query in Book entity
+        userId = 1;
+        System.out.println(String.format("Books of user with id = %d: \nuser: %s\nbooks: %s",
+                userId, userService.getUserById(userId).getName(), userService.getBooksByUserIdUsingQuery(userId)));
+
     }
 }

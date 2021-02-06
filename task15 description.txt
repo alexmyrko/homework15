@@ -1,0 +1,11 @@
+Console app: Library
+Entities : Book , Author, User
+Important: 1 book may have more than 1 Author. User may have list of Books
+
+Write simple CRUD (create/read/update/delete) functionality for Author /Book/ User
+getAll/getById for Author and Book
+Add new Book for User
+Show all User books
+
+DB: any relational DB
+No need to make menu as in Jira Project, u can test all functions in main method

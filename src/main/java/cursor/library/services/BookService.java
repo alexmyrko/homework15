@@ -16,6 +16,10 @@ public class BookService {
         bookDAO.createBook(book);
     }
 
+    public void updateBook(Book book){
+        bookDAO.updateBook(book);
+    }
+
     public void removeBook(Book book){
         bookDAO.removeBook(book);
     }

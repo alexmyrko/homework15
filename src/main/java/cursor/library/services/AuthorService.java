@@ -10,6 +10,10 @@ public class AuthorService {
         authorDAO.createAuthor(author);
     }
 
+    public void updateAuthor(Author author){
+        authorDAO.updateAuthor(author);
+    }
+
     public Author getAuthorById(int id){
         return authorDAO.getAuthorByID(id);
     }

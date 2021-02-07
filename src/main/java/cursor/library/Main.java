@@ -6,11 +6,6 @@ import cursor.library.entities.User;
 import cursor.library.services.AuthorService;
 import cursor.library.services.BookService;
 import cursor.library.services.UserService;
-import cursor.library.util.HibernateUtil;
-
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import java.util.List;
 
 
 public class Main {

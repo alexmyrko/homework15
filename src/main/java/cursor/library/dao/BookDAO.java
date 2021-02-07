@@ -1,6 +1,7 @@
 package cursor.library.dao;
 
 import cursor.library.entities.Book;
+import cursor.library.entities.User;
 import cursor.library.util.HibernateUtil;
 
 import javax.persistence.EntityManager;
@@ -16,6 +17,14 @@ public class BookDAO {
         EntityManager entityManager = HibernateUtil.getEntityManager();
         entityManager.getTransaction().begin();
         entityManager.persist(book);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
+
+    public void updateBook(Book book){
+        EntityManager entityManager = HibernateUtil.getEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.merge(book);
         entityManager.getTransaction().commit();
         entityManager.close();
     }

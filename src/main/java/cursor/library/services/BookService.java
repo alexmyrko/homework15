@@ -20,8 +20,8 @@ public class BookService {
         bookDAO.updateBook(book);
     }
 
-    public void removeBook(Book book){
-        bookDAO.removeBook(book);
+    public void removeBookById(int id){
+        bookDAO.removeBookById(id);
     }
 
     public List<Book> getAllBooks(){

@@ -69,5 +69,6 @@ public class Main {
         System.out.println(String.format("Books of user with id = %d: \nuser: %s\nbooks: %s",
                 userId, userService.getUserById(userId).getName(), userService.getBooksByUserIdUsingQuery(userId)));
 
+        bookService.removeBookById(2);
     }
 }

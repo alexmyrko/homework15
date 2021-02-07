@@ -29,9 +29,10 @@ public class BookDAO {
         entityManager.close();
     }
 
-    public void removeBook(Book book){
+    public void removeBookById(int id){
         EntityManager entityManager = HibernateUtil.getEntityManager();
         entityManager.getTransaction().begin();
+        Book book = entityManager.find(Book.class, id);
         entityManager.remove(book);
         entityManager.getTransaction().commit();
         entityManager.close();

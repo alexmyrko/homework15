@@ -26,12 +26,4 @@ public class AuthorDAO {
         entityManager.getTransaction().commit();
         entityManager.close();
     }
-
-    public void removeAuthor(Author author){
-        EntityManager entityManager = HibernateUtil.getEntityManager();
-        entityManager.getTransaction().begin();
-        entityManager.remove(author);
-        entityManager.getTransaction().commit();
-        entityManager.close();
-    }
 }

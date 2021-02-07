@@ -17,8 +17,5 @@ public class AuthorService {
     public Author getAuthorById(int id){
         return authorDAO.getAuthorByID(id);
     }
-
-    public void removeAuthor(Author author){
-        authorDAO.removeAuthor(author);
-    }
+    
 }
